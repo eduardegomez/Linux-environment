@@ -1,6 +1,7 @@
 
-# 📦 Linux Environment Setup  
-Configuración de un entorno de trabajo eficiente en Linux.
+# 📦 Entorno Linux de trabajo
+
+Configuración de un entorno de trabajo eficiente en Linux, con ZSH, Kitty, fuentes Nerd y utilidades modernas (lsd, bat). Este entorno proporciona un flujo de trabajo más visual, productivo y cómodo.
 
 ---
 
@@ -26,7 +27,7 @@ sudo apt install bat
 
 ---
 
-### 💻 Terminal ZSH
+## 💻 Terminal ZSH
 Instalamos ZSH como shell avanzado:
 ```bash
 sudo apt install zsh
@@ -61,14 +62,12 @@ rm Hack.zip LICENSE.md README.md
 
 ---
 
-## 🔹 Kitty - Instalación y Configuración
+## 🐱 Kitty - Instalación y Configuración
 
 ### 🔸 Instalación rápida (repositorio oficial, versión estable)
 ```bash
 sudo apt install kitty
 ```
-
----
 
 ### 🔸 Instalación desde la última release en GitHub
 Kitty es un emulador de terminal moderno y acelerado por GPU.
@@ -97,8 +96,6 @@ sudo rm kitty-<version>-x86_64.tar
 /opt/kitty/bin/kitty -v
 ```
 
----
-
 ### 🔸 Añadir Kitty al PATH
 ```bash
 echo 'export PATH="/opt/kitty/bin:$PATH"' >> ~/.bashrc    # Para bash
@@ -109,8 +106,6 @@ Recargamos la configuración:
 source ~/.bashrc    # Para bash
 source ~/.zshrc     # Para zsh
 ```
-
----
 
 ### 🔸 Crear un lanzador de escritorio para Kitty
 1. Editamos o creamos el archivo:
@@ -143,8 +138,6 @@ chmod +x ~/.local/share/applications/kitty.desktop
 update-desktop-database ~/.local/share/applications/
 ```
 
----
-
 ### 🔸 Configurar Kitty
 1. Accedemos al directorio de configuración:
 ```bash
@@ -155,10 +148,7 @@ cd ~/.config/kitty
 
 3. Recargamos Kitty para aplicar cambios.
 
----
-
 ### 🔸 Copiar configuración a root (opcional)
-Si queremos que root tenga la misma configuración:
 ```bash
 sudo mkdir -p /root/.config/kitty
 sudo cp ~/.config/kitty/* /root/.config/kitty/
@@ -166,67 +156,73 @@ sudo cp ~/.config/kitty/* /root/.config/kitty/
 
 ---
 
+## 🐚 Configuración avanzada de ZSH
+
 ### 🔸 Configurar ZSH (Z Shell)
 1. Instalación de pluggins:
-
 ```bash
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 echo "source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
 ```
-
 ```bash
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
 echo "source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
 ```
-
 ```bash
 git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git ~/.zsh/zsh-autocomplete
 echo "source ~/.zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh" >> ~/.zshrc
 ```
 
-2. Recargamos la configurazión ZSH:
-``` bash
+2. Recargamos la configuración ZSH:
+```bash
 source ~/.zshrc
 ```
 
 3. Activamos la shell ZSH en nuestros usuarios:
-``` bash
+```bash
 usermod --shell /usr/bin/zsh root
 usermod --shell /usr/bin/zsh eduard
 ```
 
----
-
----
-
 ### 🔸 Instalación Powerlevel10k
-Powerlevel10k es un tema para ZSH diseñado para ser visualmente atractivo y altamente informativo.
-IMPORTANTE: Este proceso hay que realizarlo tanto para nuestro usuario como para el usuario root si queremos que aplique estas configuraciones.
-
 ```bash
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
 ```
 
-Cambiamos la ruta de la powerlevel10k para hacerla absoluta (para que no nos de error como root por no existir en su directorio)
+Cambiamos la ruta de powerlevel10k a absoluta:
 ```bash
 vim ~/.zshrc
 ```
 
-Instalación powerlevel10k (abrirá el menú de configuración)
+Instalación de powerlevel10k (abrirá el menú de configuración):
 ```bash
 zsh
 ```
 
-Podemos editar la configuración y añadir/desactivar opciones desde el archivo: 
+Editar configuración desde el archivo:
 ```bash
 vim ~/.p10k.zsh
 ```
 
 ---
 
-📌 **Resultado final:**  
-Tendrás un entorno Linux optimizado, con terminal ZSH, fuentes mejoradas y Kitty como terminal principal (incluido en el menú de aplicaciones).
+## 📁 Estructura del proyecto
+```
+.
+├── README.md                # Guía de instalación y configuración
+├── kitty/                   # Configuración para el terminal Kitty
+├── zsh/                     # Configuración de ZSH y plugins
+└── powerlevel10k/           # Configuración de Powerlevel10k para ZSH
+```
 
-![image](https://github.com/user-attachments/assets/3ff1ef98-8b14-43fc-b942-08d65cc2e35b)
+---
 
+## 🎉 Resultado final
+Tendrás un entorno Linux optimizado, con:
+- Terminal ZSH personalizado (Powerlevel10k)
+- Kitty con fuentes Nerd y configuraciones avanzadas
+- Utilidades modernas (`lsd`, `batcat`, `7zip`)
+- Accesos rápidos y resaltado de sintaxis en terminal
+
+![Entorno final](https://github.com/user-attachments/assets/3ff1ef98-8b14-43fc-b942-08d65cc2e35b)
