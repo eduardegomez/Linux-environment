@@ -1,5 +1,5 @@
 
-# 📦 Entorno Linux de trabajo
+# 📦 Entorno de trabajo para sistemas Linux
 
 Configuración de un entorno de trabajo eficiente en Linux, con ZSH, Kitty, fuentes Nerd y utilidades modernas (lsd, bat). Este entorno proporciona un flujo de trabajo más visual, productivo y cómodo.
 
@@ -13,17 +13,22 @@ Instalamos 7zip para manejar archivos comprimidos:
 sudo apt install p7zip-full
 ```
 
-### 📂 lsd
-Lsd (abreviatura de LSDeluxe) es un reemplazo moderno para el tradicional comando ls de Unix, diseñado para mejorar la visualización de los archivos en la terminal. 
+
+### 📦 lsd (LSDeluxe)
+Lsd (abreviatura de LSDeluxe) es un reemplazo moderno para el tradicional comando ls de Unix, diseñado para mejorar la visualización de los archivos en la terminal.
 ```bash
 sudo apt install lsd
 ```
+🔗 Más info: https://github.com/lsd-rs/lsd
 
-### 📂 batcat
-Batcat es la versión distribuida en Debian y Ubuntu del programa bat, una herramienta de línea de comandos que sirve como una versión mejorada del clásico comando cat de Unix
+
+### 📦 batcat (bat)
+Batcat es la versión distribuida en Debian y Ubuntu del programa bat, una herramienta de línea de comandos que sirve como una versión mejorada del clásico comando cat de Unix.
 ```bash
 sudo apt install bat
 ```
+🔗 Más info: https://github.com/sharkdp/bat
+
 
 ---
 
@@ -212,7 +217,7 @@ vim ~/.p10k.zsh
 .
 ├── README.md                # Guía de instalación y configuración
 ├── kitty/                   # Configuración para el terminal Kitty
-├── zsh/                     # Configuración de ZSH y plugins
+├── zsh/                     # Configuración de ZSH
 └── powerlevel10k/           # Configuración de Powerlevel10k para ZSH
 ```
 
