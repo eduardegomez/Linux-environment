@@ -12,6 +12,18 @@ Instalamos 7zip para manejar archivos comprimidos:
 sudo apt install p7zip-full
 ```
 
+### 📂 lsd
+Lsd (abreviatura de LSDeluxe) es un reemplazo moderno para el tradicional comando ls de Unix, diseñado para mejorar la visualización de los archivos en la terminal. 
+```bash
+sudo apt install lsd
+```
+
+### 📂 batcat
+Batcat es la versión distribuida en Debian y Ubuntu del programa bat, una herramienta de línea de comandos que sirve como una versión mejorada del clásico comando cat de Unix
+```bash
+sudo apt install bat
+```
+
 ---
 
 ### 💻 Terminal ZSH
