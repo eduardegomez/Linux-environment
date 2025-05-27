@@ -227,3 +227,6 @@ vim ~/.p10k.zsh
 
 📌 **Resultado final:**  
 Tendrás un entorno Linux optimizado, con terminal ZSH, fuentes mejoradas y Kitty como terminal principal (incluido en el menú de aplicaciones).
+
+![image](https://github.com/user-attachments/assets/3ff1ef98-8b14-43fc-b942-08d65cc2e35b)
+
