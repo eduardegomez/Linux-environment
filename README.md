@@ -154,5 +154,64 @@ sudo cp ~/.config/kitty/* /root/.config/kitty/
 
 ---
 
+### 🔸 Configurar ZSH (Z Shell)
+1. Instalación de pluggins:
+
+```bash
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+echo "source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
+```
+
+```bash
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
+echo "source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
+```
+
+```bash
+git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git ~/.zsh/zsh-autocomplete
+echo "source ~/.zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh" >> ~/.zshrc
+```
+
+2. Recargamos la configurazión ZSH:
+``` bash
+source ~/.zshrc
+```
+
+3. Activamos la shell ZSH en nuestros usuarios:
+``` bash
+usermod --shell /usr/bin/zsh root
+usermod --shell /usr/bin/zsh eduard
+```
+
+---
+
+---
+
+### 🔸 Instalación Powerlevel10k
+Powerlevel10k es un tema para ZSH diseñado para ser visualmente atractivo y altamente informativo.
+IMPORTANTE: Este proceso hay que realizarlo tanto para nuestro usuario como para el usuario root si queremos que aplique estas configuraciones.
+
+```bash
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+```
+
+Cambiamos la ruta de la powerlevel10k para hacerla absoluta (para que no nos de error como root por no existir en su directorio)
+```bash
+vim ~/.zshrc
+```
+
+Instalación powerlevel10k (abrirá el menú de configuración)
+```bash
+zsh
+```
+
+Podemos editar la configuración y añadir/desactivar opciones desde el archivo: 
+```bash
+vim ~/.p10k.zsh
+```
+
+---
+
 📌 **Resultado final:**  
 Tendrás un entorno Linux optimizado, con terminal ZSH, fuentes mejoradas y Kitty como terminal principal (incluido en el menú de aplicaciones).
