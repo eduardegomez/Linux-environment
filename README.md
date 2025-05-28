@@ -5,6 +5,17 @@ Configuración de un entorno de trabajo eficiente en Linux, con ZSH, Kitty, fuen
 
 ---
 
+## 📁 Estructura del proyecto
+```
+.
+├── README.md                # Guía de instalación y configuración
+├── kitty/                   # Configuración para el terminal Kitty
+├── zsh/                     # Configuración de ZSH
+└── powerlevel10k/           # Configuración de Powerlevel10k para ZSH
+```
+
+---
+
 ## 🔹 Instalación de herramientas esenciales
 
 ### 📂 7zip
@@ -68,7 +79,7 @@ rm Hack.zip LICENSE.md README.md
 ---
 
 ## 🐱 Kitty - Instalación y Configuración
-
+Esta configuración instala y personaliza Kitty, un emulador de terminal moderno acelerado por GPU, que mejora significativamente la velocidad, el aspecto visual y la experiencia general de uso en la línea de comandos.
 ### 🔸 Instalación rápida (repositorio oficial, versión estable)
 ```bash
 sudo apt install kitty
@@ -162,7 +173,7 @@ sudo cp ~/.config/kitty/* /root/.config/kitty/
 ---
 
 ## 🐚 Configuración avanzada de ZSH
-
+Esta configuración personaliza la shell del sistema utilizando ZSH, un intérprete de comandos avanzado que mejora la experiencia en la terminal con funciones modernas, autocompletado inteligente y temas visuales como Powerlevel10k.
 ### 🔸 Configurar ZSH (Z Shell)
 1. Instalación de pluggins:
 ```bash
@@ -212,13 +223,39 @@ vim ~/.p10k.zsh
 
 ---
 
-## 📁 Estructura del proyecto
+## 📂 Configuración de Nemo y Kitty como terminal contextual
+Esta configuración permite reemplazar la opción predeterminada "Abrir en terminal" de GNOME por una alternativa más flexible, con Nemo como explorador de archivos y Kitty como terminal de comandos, ofreciendo una experiencia más personalizable y eficiente.
+### 🔸 Instalación de Nemo
+```bash
+sudo apt install nemo
 ```
-.
-├── README.md                # Guía de instalación y configuración
-├── kitty/                   # Configuración para el terminal Kitty
-├── zsh/                     # Configuración de ZSH
-└── powerlevel10k/           # Configuración de Powerlevel10k para ZSH
+### 🔸 Configurar Nemo como explorador de archivos predeterminado
+```bash
+xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
+```
+### 🔸 Crear acción personalizada "Abrir Kitty aquí"
+1. Ve a la carpeta de acciones de Nemo:
+```bash
+mkdir -p ~/.local/share/nemo/actions
+cd ~/.local/share/nemo/actions
+```
+2. Crea el archivo de acción:
+```bash
+nano abrir_kitty_aqui.nemo_action
+```
+3. Contenido del archivo:
+```ini
+[Nemo Action]
+Name=Abrir Kitty aquí
+Comment=Abrir el terminal Kitty en esta carpeta
+Exec=/opt/kitty/bin/kitty --working-directory=%P
+Icon=utilities-terminal
+Selection=any
+Extensions=dir;
+```
+4. Guarda y reinicia Nemo:
+```bash
+nemo -q
 ```
 
 ---
