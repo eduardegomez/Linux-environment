@@ -47,9 +47,10 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 source /home/eduard/powerlevel10k/powerlevel10k.zsh-theme
 
 # ZSH AutoSuggestions Pluggin
-if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ];then
-	source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-fi
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# ZSH Syntax Highlighting Pluggin
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
