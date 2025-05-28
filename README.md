@@ -79,7 +79,7 @@ rm Hack.zip LICENSE.md README.md
 ---
 
 ## 🐱 Kitty - Instalación y Configuración
-Esta configuración instala y personaliza Kitty, un emulador de terminal moderno acelerado por GPU, que mejora significativamente la velocidad, el aspecto visual y la experiencia general de uso en la línea de comandos.
+**Esta configuración instala y personaliza Kitty, un emulador de terminal moderno acelerado por GPU, que mejora significativamente la velocidad, el aspecto visual y la experiencia general de uso en la línea de comandos.**
 ### 🔸 Instalación rápida (repositorio oficial, versión estable)
 ```bash
 sudo apt install kitty
@@ -172,8 +172,23 @@ sudo cp ~/.config/kitty/* /root/.config/kitty/
 
 ---
 
+## 🐱 Configurar Kitty para abrir con Ctrl+Alt+T
+1. Registra Kitty como alternativa para x-terminal-emulator:
+```bash
+sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /opt/kitty/bin/kitty 50
+```
+2. Configura Kitty como terminal predeterminado:
+```bash
+sudo update-alternatives --config x-terminal-emulator
+```
+3. Reinicia tu entorno de escritorio o sesión para aplicar los cambios.
+
+💡 Ahora, al presionar **Ctrl+Alt+T**, se abrirá **Kitty**.
+
+---
+
 ## 🐚 Configuración avanzada de ZSH
-Esta configuración personaliza la shell del sistema utilizando ZSH, un intérprete de comandos avanzado que mejora la experiencia en la terminal con funciones modernas, autocompletado inteligente y temas visuales como Powerlevel10k.
+**Esta configuración personaliza la shell del sistema utilizando ZSH, un intérprete de comandos avanzado que mejora la experiencia en la terminal con funciones modernas, autocompletado inteligente y temas visuales como Powerlevel10k.**
 ### 🔸 Configurar ZSH (Z Shell)
 1. Instalación de pluggins:
 ```bash
@@ -224,7 +239,7 @@ vim ~/.p10k.zsh
 ---
 
 ## 📂 Configuración de Nemo y Kitty como terminal contextual
-Esta configuración permite reemplazar la opción predeterminada "Abrir en terminal" de GNOME por una alternativa más flexible, con Nemo como explorador de archivos y Kitty como terminal de comandos, ofreciendo una experiencia más personalizable y eficiente.
+**Esta configuración permite reemplazar la opción predeterminada "Abrir en terminal" de GNOME por una alternativa más flexible, con Nemo como explorador de archivos y Kitty como terminal de comandos, ofreciendo una experiencia más personalizable y eficiente.**
 ### 🔸 Instalación de Nemo
 ```bash
 sudo apt install nemo
